@@ -28,12 +28,19 @@ function generatePassword() {
     includeLowers: confirm("Do you want to include lowercase letters? (a b c d...)"),
     includeUppers: confirm("Do you want to include uppercase letters? (A B C D...)"),
     includeSpecials: confirm("Do you want to include special characters? (# $ % @...)"),
-    passwordLength: prompt("How many characters should the password contain? (8-128)", "Enter a number using digits between 8 and 128"),
+    passwordLength: prompt("How many characters should the password contain? (8-128)", "Default is 20 characters", 20),
   };
 
-  // validate passwordLength
-  while (isNaN(userInput.passwordLength) || !(8 <= userInput.passwordLength <= 128)) {
-    userInput.passwordLength = prompt("You did not enter a number between 8 and 128!", "Enter a number using digits between 8 and 128")
+  // validate userInput
+  while (!userInput.includeNums && !userInput.includeLowers && !userInput.includeUppers && !userInput.includeSpecials) {
+    alert("You must select at least one category of characters for your password");
+    userInput.includeNums = confirm("Do you want to include numbers? (0 1 2 3...)");
+    userInput.includeLowers = confirm("Do you want to include lowercase letters? (a b c d...)");
+    userInput.includeUppers = confirm("Do you want to include uppercase letters? (A B C D...)");
+    userInput.includeSpecials = confirm("Do you want to include special characters? (# $ % @...)");
+  };
+  while (isNaN(userInput.passwordLength) || (8 > userInput.passwordLength) || (userInput.passwordLength > 128)) {
+    userInput.passwordLength = prompt("You did not enter a number between 8 and 128!", "Enter a number using digits between 8 and 128");
   };
 
   // build array of chosen category names
@@ -49,5 +56,17 @@ function generatePassword() {
       generatedPassword += loopCategory[Math.floor(Math.random() * (loopCategory.length))];
     };
   };
-  return generatedPassword;
+
+  return generatedPassword.substring(0, userInput.passwordLength);
 }
+
+/* BUGS
+1. Validation for non-number strings OK. But not catching numbers outside 8-128 length range.
+
+2. Passwords only generated in multiples of the number of categories chosen.
+
+So, if one category is chosen, it will match the number requested.
+  But if all 4 are chosen and length should be 13, it will return a password 16 char long....the next highest multiple of 4.
+
+  If 3 categories are chosen, and the length requested is 10, it will return 12-char password, etc...
+  */
