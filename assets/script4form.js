@@ -1,6 +1,14 @@
     // Event listener for button click to start the program
 document.querySelector("#generate").addEventListener("click", displayPassword);
 
+    // Event listener for updating the current value label on the slider for password length
+const length = document.querySelector('#inputLength');
+const output = document.querySelector('#lengthOutput');
+output.textContent = length.value;
+price.addEventListener('input', function() {
+  output.textContent = length.value;
+});
+
     // Display the generated password to the #password <textarea>
 function displayPassword() {
   document.querySelector("#password").value = generatePassword(); // call generate function and place returned value into HTML <input>

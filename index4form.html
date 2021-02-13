@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Password Generator Form</title>
+    <link rel="stylesheet" href="assets/css/style4form.css" />
+</head>
+
+<body>
+    <div class="formwrapper">
+        <header>
+            <h1>Password Generator Form</h1>
+        </header>
+        <form>
+
+            <fieldset id="charactersNum">
+                <legend>How many characters do you need in your new password?</legend>
+                <ul>
+                    <li>
+                        <label for="inputLength">Password Length Needed (8–128 characters)</label>
+                        <input type="range" id="inputLength" name="inputlength" min="8" max="128" step="1" value="8"
+                            required>
+                        <output id="lengthOutput" for="inputLength"></output>
+                    </li>
+                </ul>
+            </fieldset>
+
+            <fieldset id="charactersType">
+                <legend>Which type of characters should your password include? (Check all that apply)</legend>
+                <ul>
+                    <li>
+                        <label for="lowercases">Lowercase Letters (a, b, c, d, ...)</label>
+                        <input type="checkbox" id="lowercases" name="charTypes" value="lowercases" checked>
+                    </li>
+                    <li>
+                        <label for="uppercases">Uppercase Letters (A, B, C, D, ...)</label>
+                        <input type="checkbox" id="uppercases" name="uppercases" value="uppercases" checked>
+                    </li>
+                    <li>
+                        <label for="numbers">Numbers (0, 1, 2, 3, ...)</label>
+                        <input type="checkbox" id="numbers" name="numbers" value="numbers" checked>
+                    </li>
+                    <li>
+                        <label for="specials">Special Characters (!, #, $, % ...)</label>
+                        <input type="checkbox" id="specials" name="specials" value="specials" checked>
+                    </li>
+                </ul>
+            </fieldset>
+        </form>
+
+
+
+
+
+
+        <div class="card-header">
+            <h2>Generate a Password</h2>
+        </div>
+        <div class="card-body">
+            <textarea readonly id="password" placeholder="Your Secure Password will appear here"
+                aria-label="Generated Password"></textarea>
+        </div>
+        <div class="card-footer">
+            <button id="generate" class="btn">Generate Password</button>
+        </div>
+    </div>
+    </div>
+    <script src="assets/script4form.js"></script>
+</body>
+
+</html>
