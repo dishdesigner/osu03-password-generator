@@ -2,6 +2,7 @@
 document.querySelector("#generate").addEventListener("click", displayPassword);
 document.querySelector("#copy").addEventListener("click", copyPassword);
 window.addEventListener('load', (event) => {
+  document.querySelector("#copy").disabled = true;
   document.querySelector("#passwordBox").textContent = "Your password will appear here";
 });
 
@@ -63,6 +64,7 @@ function generatePassword() {
     };
   };
   // truncate the final password to the exact request length if it's longer
+  document.querySelector("#copy").disabled = false;
   return generatedPassword.substring(0, userInput.passwordLength);
 }
 
