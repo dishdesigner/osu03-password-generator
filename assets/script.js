@@ -1,13 +1,16 @@
-    // Event listener for button click to start the program
+    // Event listeners for button clicks to generate or copy password
 document.querySelector("#generate").addEventListener("click", displayPassword);
+document.querySelector("#copy").addEventListener("click", copyPassword);
+
 
     // Display the generated password to the #password <textarea>
 function displayPassword() {
+  document.querySelector("#generate").blur(); // remove button focus so it doesn't hang there after password is displayed.
   document.querySelector("#password").value = generatePassword(); // call generate function and place returned value into HTML <input>
 }
 
 /*************************************/
-// Progressive Enhancement: Display modal user input form: password length, checkboxes for categories to include, labels with examples. Assign values returned from user form into userInput object's values instead of using prompts / confirms.
+// See "script4form.js" for solution using a form input instead of confirm/prompt dialogs.
 function generatePassword() {
 
   let generatedPassword = ""; // RETURN THIS VALUE
@@ -49,13 +52,22 @@ function generatePassword() {
   if (userInput.includeUppers) {categoriesChosen.push("uppercases")};
   if (userInput.includeSpecials) {categoriesChosen.push("specials")};
 
-  // use a while loop to add random characters until generatedPassword.length === passwordLength
+  // Cycle through the chosen categories and add a random character from each until generatedPassword.length >= passwordLength
   while (generatedPassword.length < userInput.passwordLength) {
     for (let i = 0; i < categoriesChosen.length; i++) {
       let loopCategory = dictionary[categoriesChosen[i]];
       generatedPassword += loopCategory[Math.floor(Math.random() * (loopCategory.length))];
     };
   };
-
+  // truncate the final password to the exact request length if it's longer
   return generatedPassword.substring(0, userInput.passwordLength);
+}
+
+function copyPassword() {
+  var textarea = document.querySelector("#password");
+  textarea.focus();
+  textarea.select();
+  document.execCommand("copy");
+  textarea.blur();
+  alert("Password Copied");
 }

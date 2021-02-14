@@ -1,3 +1,8 @@
+/* BETTER FONTS */
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Source+Serif+Pro:ital,wght@1,200&display=swap');
+
+
 *,
 *::before,
 *::after {
@@ -14,13 +19,17 @@ body,
 
 body {
   font-family: sans-serif;
-  background-color: #f9fbfd;
+  background-color: #262626;
+}
+
+h1 {
+  font-family: Source Serif Pro, monospace;
+  color: white;
+  letter-spacing: 0.05em;
 }
 
 .wrapper {
-  padding-top: 30px;
-  padding-left: 20px;
-  padding-right: 20px;
+  padding: 30px 20px 0px 20px;
 }
 
 header {
@@ -31,27 +40,32 @@ header {
 }
 
 .card {
-  background-color: hsl(0, 0%, 100%);
-  border-radius: 5px;
-  border-width: 1px;
+  background-color: #621c1c;
+  /* border-radius: 5px;
+  border-width: 1px; */
   box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 8px 0px;
-  color: hsl(206, 17%, 28%);
+  color: #380f3b;
   font-size: 18px;
   margin: 0 auto;
   max-width: 800px;
   padding: 30px 40px;
 }
 
-.card-header::after {
+.card-header {
+  align-items: center;
+}
+
+/* .card-header::after {
   content: " ";
   display: block;
   width: 100%;
   background: #e7e9eb;
   height: 2px;
-}
+} */
 
 .card-body {
   min-height: 100px;
+  color:rgba(0, 0, 0, 0.15);
 }
 
 .card-footer {
@@ -74,23 +88,38 @@ header {
 
 .btn {
   border: none;
-  background-color: hsl(360, 91%, 36%);
+  background-color: #af0808;
   border-radius: 25px;
-  box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 6px 0px rgba(0, 0, 0, 0.2) 0px 1px 1px
-    0px;
+  -webkit-box-shadow: 5px 5px 5px #222;
   color: hsl(0, 0%, 100%);
   display: inline-block;
-  font-size: 22px;
+  font-family: 'Source Sans Pro', monospace;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-size: 1.0em;
   line-height: 22px;
-  margin: 16px 16px 16px 20px;
-  padding: 14px 34px;
+  margin: 1em 2em 0 0;
+  padding: .8em 1em;
   text-align: center;
   cursor: pointer;
+}
+#generate {
+  margin-right: 1em;
+}
+#copy {
+  background-color: teal;
 }
 
 button[disabled] {
   cursor: default;
   background: #c0c7cf;
+}
+
+button:focus {
+  background-color: #af9e08;
+  outline-color: tomato;
+  border-color: unset;
+  border-radius: 0;
 }
 
 .float-right {
@@ -104,27 +133,27 @@ button[disabled] {
   border: none;
   display: block;
   width: 100%;
-  padding-top: 15px;
-  padding-left: 15px;
-  padding-right: 15px;
-  padding-bottom: 85px;
+  background-color: #262626;
+  color: white;
+  padding: 15px 15px 85px 15px;
+  font-family: 'Source Code Pro', monospace;
   font-size: 1.2rem;
-  text-align: center;
-  margin-top: 10px;
-  margin-bottom: 10px;
-  border: 2px dashed #c0c7cf;
-  border-radius: 6px;
+  font-weight: 300;
+  text-align: left;
+  margin: 2em 0px;
   resize: none;
   overflow: hidden;
 }
 
 @media (max-width: 690px) {
   .btn {
-    font-size: 1rem;
+    font-size: 0.8rem;
     margin: 16px 0px 0px 0px;
     padding: 10px 15px;
   }
-
+  h1 {
+    font-size: 1.4rem;
+  }
   #password {
     font-size: 1rem;
   }
@@ -132,6 +161,9 @@ button[disabled] {
 
 @media (max-width: 500px) {
   .btn {
-    font-size: 0.8rem;
+    font-size: 0.6rem;
+  }
+  h1 {
+    font-size: 1.1rem;
   }
 }
