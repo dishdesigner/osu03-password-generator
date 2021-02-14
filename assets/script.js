@@ -1,12 +1,15 @@
-    // Event listeners for button clicks to generate or copy password
+    // Event listeners for button clicks to generate or copy password and page load to clear password box content
 document.querySelector("#generate").addEventListener("click", displayPassword);
 document.querySelector("#copy").addEventListener("click", copyPassword);
+window.addEventListener('load', (event) => {
+  document.querySelector("#passwordBox").textContent = "Your password will appear here";
+});
 
 
     // Display the generated password to the #password <textarea>
 function displayPassword() {
   document.querySelector("#generate").blur(); // remove button focus so it doesn't hang there after password is displayed.
-  document.querySelector("#password").value = generatePassword(); // call generate function and place returned value into HTML <input>
+  document.querySelector("#passwordBox").value = generatePassword(); // call generate function and place returned value into HTML <input>
 }
 
 /*************************************/
@@ -31,7 +34,7 @@ function generatePassword() {
     includeLowers: confirm("Do you want to include lowercase letters? (a b c d...)"),
     includeUppers: confirm("Do you want to include uppercase letters? (A B C D...)"),
     includeSpecials: confirm("Do you want to include special characters? (# $ % @...)"),
-    passwordLength: prompt("How many characters should the password contain? (8-128)", "Default is 20 characters", 20),
+    passwordLength: prompt("How many characters should the password contain? (8-128)"),
   };
 
   // validate userInput
@@ -64,10 +67,16 @@ function generatePassword() {
 }
 
 function copyPassword() {
-  var textarea = document.querySelector("#password");
-  textarea.focus();
-  textarea.select();
-  document.execCommand("copy");
-  textarea.blur();
-  alert("Password Copied");
+  var textarea = document.querySelector("#passwordBox");
+  if (textarea.value === "Your password will appear here") {
+    alert("There is no password to copy. Click the \"New Password\" button to generate new password first.");
+    document.querySelector("#copy").blur();
+  } else {
+    textarea.focus();
+    textarea.select();
+    document.execCommand("copy");
+    alert("Password Copied");
+    textarea.blur();
+  }
+  // window.getSelection().removeAllRanges();
 }
