@@ -13,7 +13,6 @@
 body {
   font-family: sans-serif;
   background-color: #262626;
-  /* position: relative; */
   height: 100%;
   margin: 0;
   padding: 0;
@@ -31,7 +30,7 @@ body {
   font-size: 18px;
   margin: 0 auto;
   max-width: 800px;
-  padding: 30px 40px;
+  padding: 10px 40px;
 }
 
 /********* VISUAL & TYPE STYLES *********/
@@ -67,7 +66,6 @@ button[disabled] {
 }
 
 #generate {
-  /* margin-right: 1em; */
   background-color: #af0808;
 }
 #copy {
@@ -117,6 +115,6 @@ button[disabled] {
     font-size: 0.8rem;
   }
   h1 {
-    font-size: 1.1rem;
+    font-size: 1.2rem;
   }
 }
