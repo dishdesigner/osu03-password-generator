@@ -31,7 +31,7 @@ There are no installation steps required to view this project. Just a web browse
 
 To use the application, click the Deployed Application link above. To see the form-based version, click the secondary link. Answer the questions about which characters you'd like in a password and its length. The application will generate a random password for you to use that contains at least one of every category you chose.
 
-[original prototype screenshot](https://dishdesigner.github.io/password-generator/assets/images/screenshot.png)
+[original prototype screenshot](https://dishdesigner.github.io/password-generator/assets/images/project-mockup.png)
 
 ---
 
