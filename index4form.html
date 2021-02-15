@@ -5,17 +5,35 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Password Generator</title>
+    <title>Password Generator Form</title>
     <link rel="stylesheet" href="assets/css/style4form.css" />
 </head>
 
 <body>
-    <div class="card">
+    <form>
         <h1>Update Your Passwords<br>Every 30 Days</h1>
+        <p>Choose a password length and indicate which kinds of characters should be included:</p>
+        <div class="inputsWrapper">
+            <div class="inputSection">
+                <label for="inputLength"><span>Length</span> (8–128)</label>
+                <input type="number" name="length" id="inputLength" min="8" max="128" step="1" value="20">
+            </div>
+            <div class="inputSection">
+                <p>Choose at least one:</p>
+                <input type="checkbox" name="lowercases" id="lowercases">
+                <label for="lowercases"><span>Lowercase</span></label><br>
+                <input type="checkbox" name="uppercases" id="uppercases">
+                <label for="uppercases"><span>Uppercase</span></label><br>
+                <input type="checkbox" name="numbers" id="numbers">
+                <label for="numbers"><span>Numbers</span></label><br>
+                <input type="checkbox" name="specials" id="specials">
+                <label for="specials"><span>Specials</span></label><br>
+            </div>
+        </div>
         <button id="generate" class="btn">New Password</button>
         <button id="copy" class="btn">Copy Password</button>
         <textarea readonly id="passwordBox" aria-label="Generated Password"></textarea>
-    </div>
+    </form>
     <script src="assets/script4form.js"></script>
 </body>
 

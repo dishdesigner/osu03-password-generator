@@ -1,6 +1,7 @@
 # Password Generator
 
 [SEE THE DEPLOYED APPLICATION HERE](https://dishdesigner.github.io/password-generator/)
+* Coming soon: [the form-based version](https://dishdesigner.github.io/password-generator/index4form.html) discussed in Extensions below.
 
 ---
 
@@ -10,7 +11,7 @@ This application is a simple random password generator. It was built with pure H
 * The password must contain at least one character from each of the selected categories.
 * The password can range in length from 8 to 128 characters.
 
-To extend this project:
+## Extensions this project
 * It would be good to create a more sophisticated form interface for gathering the user's input and which kinds of characters to use like a form with checkboxes and labels showing examples of each character category.
 * It would be good to place a Copy button in the interface to copy any generated password to the Clipboard automatically so users don't have to select a displayed password string and worry they got all the characters included (especially if the password starts or ends with special characters).
 * It would also be useful to give users an option to limit the special characters used!
@@ -28,18 +29,9 @@ There are no installation steps required to view this project. Just a web browse
 
 ## Usage
 
-To use the application, click the Deployed Application link above. Answer the questions about which characters you'd like in a password and its length. The application will generate a random password for you to use that contains at least one of every category you chose.
+To use the application, click the Deployed Application link above. To see the form-based version, click the secondary link. Answer the questions about which characters you'd like in a password and its length. The application will generate a random password for you to use that contains at least one of every category you chose.
 
-```md
-![alt text](assets/images/screenshot.png)
-```
-
----
-
-## Tests
-
-Already provided by application?
-???????????????????????????????
+[original prototype screenshot](https://dishdesigner.github.io/password-generator/assets/images/screenshot.png)
 
 ---
 

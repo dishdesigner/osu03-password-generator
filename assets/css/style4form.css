@@ -1,7 +1,7 @@
 /********* BETTER FONTS *********/
 @import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Source+Serif+Pro:ital,wght@1,200&display=swap');
-
 
 /********* LAYOUT STYLES *********/
 *,
@@ -11,28 +11,80 @@
 }
 
 body {
-  font-family: sans-serif;
+  font-family: 'Source Sans Pro', sans-serif;
+  font-weight: 300;
+  color: white;
   background-color: #262626;
   height: 100%;
   margin: 0;
   padding: 0;
+  overflow: auto;
 }
 
-.card {
+form {
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%); /* center form*/
   background-color: #441818;
   font-size: 18px;
-  margin: 0 auto;
+  margin: 20px auto;
   max-width: 800px;
   padding: 10px 40px;
 }
 
+/********* FORM STYLES *********/
+.inputsWrapper {
+  /* background-color: sandybrown; */
+  border: #723535 1px solid;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
+}
+.inputSection {
+  /* background-color: rosybrown; */
+  margin: 1em 1em;
+}
+
+input[type="number"] {
+  font-size: 1.4rem;
+  font-family: monospace;
+  min-width: 2em;
+}
+input[type="checkbox"] {
+  -ms-transform: scale(2,2); /* IE */
+  -moz-transform: scale(2,2); /* FF */
+  -webkit-transform: scale(2,2); /* Safari and Chrome */
+  -o-transform: scale(2,2); /* Opera */
+  transform: scale(1.5,1.5);
+  margin: 0.6em 0;
+}
+input[type="checkbox"]:checked {
+  background-color: #ffaa00;
+  transition: all 0.4s;
+}
+input[type="checkbox"] + label {
+  margin-left: 0.5em;
+}
+input[type="checkbox"], input[type="checkbox"] + label {
+  white-space: nowrap;
+}
+input:checked + label {
+  font-weight: 700;
+}
+input:focus {
+  outline: 1px dotted black; /* lighten the focus outline on Chrome */
+}
+
+label > span {
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
 /********* VISUAL & TYPE STYLES *********/
 h1 {
-  font-family: Source Serif Pro, monospace;
+  font-family: Source Serif Pro, serif;
   color: white;
   letter-spacing: 0.06em;
 }
@@ -42,13 +94,14 @@ button {
   border-radius: 25px;
   color: rgb(255, 255, 255);
   display: inline-block;
-  font-family: 'Source Sans Pro', monospace;
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size: 0.9rem;
+  font-weight: 300;
+  line-height: 1em;
   text-transform: uppercase;
   letter-spacing: 0.1em;
-  font-size: 1.0em;
-  line-height: 22px;
-  margin: 1em 2em 0 0;
-  padding: .8em 1em;
+  margin: 1em 0 0 0;
+  padding: .5em 1em;
   text-align: center;
   cursor: pointer;
 }
@@ -88,11 +141,11 @@ button:disabled {
 }
 
 /********* RESPONSIVE STYLES *********/
-@media (max-width: 690px) {
+@media (max-width: 1000px) {
   .btn {
     font-size: 0.9rem;
-    margin: 16px 0px 0px 0px;
-    padding: 10px 15px;
+    margin: 1em 0 0 0;
+    padding: .5em 1em;
   }
   h1 {
     font-size: 1.4rem;
@@ -100,13 +153,19 @@ button:disabled {
   #passwordBox {
     font-size: 1rem;
   }
+  .inputsWrapper {
+    flex-wrap: wrap;
+  }
 }
 
-@media (max-width: 500px) {
+@media (max-width: 650px) {
   .btn {
     font-size: 0.8rem;
   }
   h1 {
     font-size: 1.2rem;
+  }
+  .inputsWrapper {
+    flex-wrap: wrap;
   }
 }
