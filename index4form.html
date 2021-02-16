@@ -10,13 +10,13 @@
 </head>
 
 <body>
-    <form>
+    <div class="form">
         <h1>Update Your Passwords<br>Every 30 Days</h1>
         <p>Choose a password length and indicate which kinds of characters should be included:</p>
-        <div class="inputsWrapper">
+        <div class="inputWrapper">
             <div class="inputSection">
                 <label for="inputLength"><span>Length</span> (8–128)</label>
-                <input type="number" name="length" id="inputLength" min="8" max="128" step="1" value="20">
+                <input type="number" name="length" id="inputLength" min="8" max="128" step="1">
             </div>
             <div class="inputSection">
                 <p>Choose at least one:</p>
@@ -30,10 +30,14 @@
                 <label for="specials"><span>Specials</span></label><br>
             </div>
         </div>
-        <button id="generate" class="btn">New Password</button>
-        <button id="copy" class="btn">Copy Password</button>
-        <textarea readonly id="passwordBox" aria-label="Generated Password"></textarea>
-    </form>
+        <div class="outputWrapper">
+            <div class="outputSection">
+                <button id="generate" class="btn">New Password</button>
+                <button id="copy" class="btn">Copy Password</button>
+                <textarea readonly id="passwordBox" aria-label="Generated Password"></textarea>
+            </div>
+        </div>
+    </div>
     <script src="assets/script4form.js"></script>
 </body>
 

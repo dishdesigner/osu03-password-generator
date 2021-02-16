@@ -1,7 +1,7 @@
 # Password Generator
 
 [SEE THE DEPLOYED APPLICATION HERE](https://dishdesigner.github.io/password-generator/)
-* Coming soon: [the form-based version](https://dishdesigner.github.io/password-generator/index4form) discussed in Extensions below.
+* [See the form-based version!](https://dishdesigner.github.io/password-generator/index4form) discussed in Extensions below.
 
 ---
 
